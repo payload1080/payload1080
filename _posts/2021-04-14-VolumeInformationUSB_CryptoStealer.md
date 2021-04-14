@@ -14,7 +14,7 @@ categories: malware
 I came across with this malware several times before, but couldn't find any detailed analysis reports nor brief, so here I am writting one.  
 Malware author uses very basic persistence mechanisms and spreading methods (e.g. infecting USB sticks), but the reason I decided to make a brief about this malware was a smart trick
 used by author to steal crypto. Briefly, it creates a thread which monitors and parses clipboard data, checks if it contains any crypto wallet address, if so replaces it with authors 
-wallet adress (victim copies a valid wallet address, meanwhile pasted adress is attackers one).
+wallet adress (victim copies a valid wallet address, meanwhile pasted address is attackers one).
 
 ![Noice](/assets/images/VolumeInformationUSBCryptoStealer/noice.jpg)
 
@@ -26,7 +26,7 @@ Opening the file in **PeStudio** gives us a little hint here in strings section,
 
 Python malware project can be unpacked using [pyinstxtractor.py](/assets/files/pyinstxtractor.py "Python Project Extractor") script.
 
-Simply running `python pyinstxtractor.py VolumeInformationUSB.exe` command leads to outputing unpacked project files.  
+Simply running `python pyinstxtractor.py VolumeInformationUSB.exe` command leads to outputting unpacked project files.  
 ![pyinstxtractor_cmd](/assets/images/VolumeInformationUSBCryptoStealer/pyinstxtractor_cmd.png)  
 
 Extracted files need to be decompiled in order to retrieve malwares original source code. In this case  
